@@ -1,13 +1,18 @@
+// Import React (Mandatory Step).
 import React from "react";
+// Import Output Screen Row.
 import OutputScreenRow from "./outputScreenRow.js";
-// this screen holds two rows, the input and the answer
-const OutputScreen = () => {
+
+// Functional Component.
+// Use to hold two Screen Rows.
+const OutputScreen = (props) => {
   return (
     <div className="screen">
-      <OutputScreenRow />
-      <OutputScreenRow />
+      <OutputScreenRow value={props.input} />
+      <OutputScreenRow value={props.answer} />
     </div>
   );
 };
 
+// Export Output Screen.
 export default OutputScreen;

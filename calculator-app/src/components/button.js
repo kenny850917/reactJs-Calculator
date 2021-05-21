@@ -1,7 +1,10 @@
 import React from "react";
-// create button component
+
+// functional component Button.
 const Button = (props) => {
-  return <input type="button" value={props.label} />;
+  return (
+    <input type="button" value={props.label} onClick={props.handleClick} />
+  );
 };
 
 export default Button;
