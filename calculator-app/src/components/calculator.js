@@ -22,12 +22,6 @@ class Calculator extends React.Component {
         <div className="mainCalc">
           <OutputScreen answer={this.state.answer} input={this.state.input} />
           <div className="button-row">
-            <Button label={"Clear"} handleClick={this.handleClick} />
-            <Button label={"Delete"} handleClick={this.handleClick} />
-            <Button label={"."} handleClick={this.handleClick} />
-            <Button label={"/"} handleClick={this.handleClick} />
-          </div>
-          <div className="button-row">
             <Button label={"7"} handleClick={this.handleClick} />
             <Button label={"8"} handleClick={this.handleClick} />
             <Button label={"9"} handleClick={this.handleClick} />
@@ -47,7 +41,15 @@ class Calculator extends React.Component {
           </div>
           <div className="button-row">
             <Button label={"0"} handleClick={this.handleClick} />
+            <Button label={"0"} handleClick={this.handleClick} />
             <Button label={"="} handleClick={this.handleClick} />
+            <Button label={"/"} handleClick={this.handleClick} />
+          </div>
+          <div className="button-row">
+            <Button label={"Clear"} handleClick={this.handleClick} />
+            <Button label={"Delete"} handleClick={this.handleClick} />
+            <Button label={"."} handleClick={this.handleClick} />
+            <Button label={" "} />
           </div>
         </div>
       </div>
