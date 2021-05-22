@@ -20,40 +20,58 @@
 
 .screen-row input {
   width: 400px;
-  background: #ddd;
+  background: #999;
+  /* box-shadow: 0 9px #999; */
   border: 0px;
   color: #222;
   padding: 10px;
   text-align: right;
 }
-
-input[type="button"] {
+.calcButton {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 3px 1px 3px 1px;
+  font-size: 16px;
+  border: 1px solid #222;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   width: 100px;
+  outline: none;
+  background: #ff9500;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  color: black;
+}
+.bigButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: 1px solid #222;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  outline: none;
   background: #f8d210;
-  border: 1px solid #222;
-  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
   color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-input[type="button"]:hover {
-  width: 100px;
-  background: red;
-  border: 1px solid #222;
-  padding: 10px 20px;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
 
-input[type="button"]:active {
-  background: #ccc;
-  border: 0px;
+.calcButton:hover {
+  background-color: #3e8e41;
 }
+.bigButton:hover {
+  background-color: #3e8e41;
+}
+
+.calcButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .split {
   height: 100%;
   width: 50%;

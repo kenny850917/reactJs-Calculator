@@ -1,15 +1,12 @@
 import React from "react";
-
-// functional component Button.
-const Button = (props) => {
+const BigButton = (props) => {
   return (
     <input
       type="button"
-      className="calcButton"
+      className="bigButton"
       value={props.label}
       onClick={props.handleClick}
     />
   );
 };
-
-export default Button;
+export default BigButton;
