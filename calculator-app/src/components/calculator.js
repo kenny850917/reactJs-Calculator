@@ -2,6 +2,8 @@ import React from "react";
 
 import OutputScreen from "./outputScreen.js";
 import Button from "./button.js";
+import BigButton from "./bigButton.js";
+import { Container } from "react-bootstrap";
 
 class Calculator extends React.Component {
   constructor() {
@@ -18,41 +20,55 @@ class Calculator extends React.Component {
   render() {
     return (
       //create calculator framework
-      <div className="frame">
-        <div className="mainCalc">
-          <OutputScreen answer={this.state.answer} input={this.state.input} />
-          <div className="button-row">
-            <Button label={"7"} handleClick={this.handleClick} />
-            <Button label={"8"} handleClick={this.handleClick} />
-            <Button label={"9"} handleClick={this.handleClick} />
-            <Button label={"*"} handleClick={this.handleClick} />
+      <>
+        <Container>
+          <div className="frame">
+            <div className="mainCalc">
+              <OutputScreen
+                answer={this.state.answer}
+                input={this.state.input}
+              />
+              <div className="button-row">
+                <Button
+                  className="calcButton"
+                  label={"7"}
+                  handleClick={this.handleClick}
+                />
+                <Button label={"8"} handleClick={this.handleClick} />
+                <Button label={"9"} handleClick={this.handleClick} />
+                <Button label={"*"} handleClick={this.handleClick} />
+              </div>
+              <div className="button-row">
+                <Button label={"4"} handleClick={this.handleClick} />
+                <Button label={"5"} handleClick={this.handleClick} />
+                <Button label={"6"} handleClick={this.handleClick} />
+                <Button label={"-"} handleClick={this.handleClick} />
+              </div>
+              <div className="button-row">
+                <Button label={"1"} handleClick={this.handleClick} />
+                <Button label={"2"} handleClick={this.handleClick} />
+                <Button label={"3"} handleClick={this.handleClick} />
+                <Button label={"+"} handleClick={this.handleClick} />
+              </div>
+              <div className="button-row">
+                <BigButton
+                  id="zero"
+                  label={"0"}
+                  handleClick={this.handleClick}
+                />
+                {/* <Button id="zero" label={"0"} handleClick={this.handleClick} /> */}
+                <Button label={"."} handleClick={this.handleClick} />
+                <Button label={"/"} handleClick={this.handleClick} />
+              </div>
+              <div className="button-row">
+                <Button label={"Clear"} handleClick={this.handleClick} />
+                <Button label={"Delete"} handleClick={this.handleClick} />
+                <BigButton label={"="} handleClick={this.handleClick} />
+              </div>
+            </div>
           </div>
-          <div className="button-row">
-            <Button label={"4"} handleClick={this.handleClick} />
-            <Button label={"5"} handleClick={this.handleClick} />
-            <Button label={"6"} handleClick={this.handleClick} />
-            <Button label={"-"} handleClick={this.handleClick} />
-          </div>
-          <div className="button-row">
-            <Button label={"1"} handleClick={this.handleClick} />
-            <Button label={"2"} handleClick={this.handleClick} />
-            <Button label={"3"} handleClick={this.handleClick} />
-            <Button label={"+"} handleClick={this.handleClick} />
-          </div>
-          <div className="button-row">
-            <Button label={"0"} handleClick={this.handleClick} />
-            <Button label={"0"} handleClick={this.handleClick} />
-            <Button label={"="} handleClick={this.handleClick} />
-            <Button label={"/"} handleClick={this.handleClick} />
-          </div>
-          <div className="button-row">
-            <Button label={"Clear"} handleClick={this.handleClick} />
-            <Button label={"Delete"} handleClick={this.handleClick} />
-            <Button label={"."} handleClick={this.handleClick} />
-            <Button label={" "} />
-          </div>
-        </div>
-      </div>
+        </Container>
+      </>
     );
   }
 
