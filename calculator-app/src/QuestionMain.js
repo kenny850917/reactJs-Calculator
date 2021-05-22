@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import questionAPI from "./components/questionBank";
 import QuestionDisplay from "./questionDisplay";
-import { Button, ProgressBar } from "react-bootstrap";
+import {
+  Button,
+  ProgressBar,
+  Container,
+  Card,
+  CardGroup,
+} from "react-bootstrap";
 // import "./style.css";
 class QuestionMain extends Component {
   constructor() {
@@ -48,47 +54,64 @@ class QuestionMain extends Component {
   //render all
   render() {
     return (
-      <div className="container">
-        <div className="title">QuizOn</div>
+      <>
+        <Container>
+          <div className="container">
+            <Card>
+              <Card.Header></Card.Header>
+              <Card.Body className="cardbody">
+                <div className="title">Math Quiz</div>
+                <div className="progressbar">
+                  Progress Bar
+                  <ProgressBar
+                    striped
+                    animated
+                    variant="secondary"
+                    now={this.state.responses * 20}
+                  />
+                </div>
 
-        {this.state.questionBank.length > 0 &&
-          this.state.responses < 5 &&
-          this.state.questionBank.map(
-            ({ question, answers, correct, questionId }) => (
-              <QuestionDisplay
-                question={question}
-                options={answers}
-                key={questionId}
-                selected={(answer) => this.computeAnswer(answer, correct)}
-              />
-            )
-          )}
-        <div>
-          {this.state.responses === 5 ? (
-            // <Result score={this.state.score} playAgain={this.playAgain} />
-            //here
-            <div className="score-board">
-              <div className="score">
-                Your score is {this.state.score} / {this.state.responses}
-                correct answer ! ! !
-              </div>
-              <Button className="playBtn" onClick={this.playAgain}>
-                Play Again
-              </Button>
+                {this.state.questionBank.length > 0 &&
+                  this.state.responses < 5 &&
+                  this.state.questionBank.map(
+                    ({ question, answers, correct, questionId }) => (
+                      <QuestionDisplay
+                        question={question}
+                        options={answers}
+                        key={questionId}
+                        selected={(answer) =>
+                          this.computeAnswer(answer, correct)
+                        }
+                      />
+                    )
+                  )}
+              </Card.Body>
+            </Card>
+            <div>
+              {this.state.responses === 5 ? (
+                // <Result score={this.state.score} playAgain={this.playAgain} />
+                //here
+                <div className="score-board">
+                  <div className="score">
+                    Your score is {this.state.score} / {this.state.responses}
+                    correct answer ! ! !
+                  </div>
+                  <Button
+                    variant="secondary"
+                    className="playBtn"
+                    onClick={this.playAgain}
+                  >
+                    Play Again
+                  </Button>
+                </div>
+              ) : (
+                console.log(this.state.score, this.state.responses)
+              )}
             </div>
-          ) : (
-            console.log(this.state.score, this.state.responses)
-          )}
-        </div>
-        <div>
-          <ProgressBar
-            striped
-            animated
-            variant="success"
-            now={this.state.responses * 20}
-          />
-        </div>
-      </div>
+            <div></div>
+          </div>
+        </Container>
+      </>
     );
   }
 }
