@@ -78,9 +78,8 @@ class Calculator extends React.Component {
     const value = event.target.value;
 
     switch (value) {
-      case "=": {
+      case "=":
         //if the case is equal sign, eval the input and convert answer
-
         if (this.state.input !== "") {
           //if has input
           var ans = "";
@@ -94,7 +93,8 @@ class Calculator extends React.Component {
           else this.setState({ answer: ans, input: "" });
           break;
         }
-      }
+
+        break;
       case "Clear": {
         // if the case is the clear sign, clean input and answer
         this.setState({ input: "", answer: "" });

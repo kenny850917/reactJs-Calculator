@@ -53,21 +53,21 @@
   text-decoration: none;
   width: 200px;
   outline: none;
-  background: #f8d210;
+  background: #ff9500;
   border-radius: 15px;
   box-shadow: 0 9px #999;
   color: black;
 }
 
 .calcButton:hover {
-  background-color: #3e8e41;
+  background-color: #f8d210;
 }
 .bigButton:hover {
-  background-color: #3e8e41;
+  background-color: #f8d210;
 }
 
 .calcButton:active {
-  background-color: #3e8e41;
+  background-color: #f8d210;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

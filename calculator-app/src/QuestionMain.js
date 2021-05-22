@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import questionAPI from "./components/questionBank";
 import QuestionDisplay from "./questionDisplay";
-import {
-  Button,
-  ProgressBar,
-  Container,
-  Card,
-  CardGroup,
-} from "react-bootstrap";
+import { Button, ProgressBar, Container, Card } from "react-bootstrap";
 // import "./style.css";
 class QuestionMain extends Component {
   constructor() {
@@ -39,7 +33,7 @@ class QuestionMain extends Component {
       responses:
         this.state.responses < 5
           ? this.state.responses + 1
-          : this.state.responses == 5,
+          : this.state.responses === 5,
     });
     if (answer === correctAnswer) {
       this.setState({
