@@ -5,4 +5,9 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Render the Calculator to the Web page.
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <div>
+    <App />
+  </div>,
+  document.getElementById("root")
+);

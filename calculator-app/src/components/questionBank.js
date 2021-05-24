@@ -66,7 +66,7 @@ const qBank = [
     question:
       "Cassandra’s ruler is 22 centimetres long. April’s ruler is 30 centimetres long. How many centimetres longer is April’s ruler?",
     answers: ["18 cm", "15 cm", "52 cm", "8 cm"],
-    correct: "18cm",
+    correct: "18 cm",
     questionId: "010",
   },
 ];

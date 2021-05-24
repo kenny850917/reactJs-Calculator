@@ -14,7 +14,6 @@ const QuestionDisplay = ({ question, options, selected }) => {
       conditional rendering 
       check if answer is not undefined, then render 
     */}
-        {/* <Card.Body></Card.Body> */}
         <Card.Body>
           {answer &&
             answer.map((text, index) => (

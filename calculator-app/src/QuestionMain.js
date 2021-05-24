@@ -10,6 +10,7 @@ class QuestionMain extends Component {
       questionBank: [],
       score: 0,
       responses: 0,
+      thiscCorrectAnswer: "",
     };
   }
 
@@ -28,7 +29,9 @@ class QuestionMain extends Component {
 
   //functions to calculate scores
   computeAnswer = (answer, correctAnswer) => {
+    // console.log("correct", correctAnswer);
     this.setState({
+      thisCorrectAnswer: correctAnswer,
       // responses increment when clicked and not greater than 5
       responses:
         this.state.responses < 5
@@ -40,6 +43,7 @@ class QuestionMain extends Component {
         score: this.state.score + 1,
       });
     }
+    console.log("ans", this.state.thisCorrectAnswer);
   };
   //componentDidMount function and get question
   componentDidMount() {
@@ -52,7 +56,6 @@ class QuestionMain extends Component {
         <Container>
           <div className="container">
             <Card>
-              <Card.Header></Card.Header>
               <Card.Body className="cardbody">
                 <div className="title">Math Quiz</div>
                 <div className="progressbar">
@@ -64,7 +67,6 @@ class QuestionMain extends Component {
                     now={this.state.responses * 20}
                   />
                 </div>
-
                 {this.state.questionBank.length > 0 &&
                   this.state.responses < 5 &&
                   this.state.questionBank.map(
@@ -79,6 +81,8 @@ class QuestionMain extends Component {
                       />
                     )
                   )}
+                The Answer was
+                {" " + this.state.thisCorrectAnswer}
               </Card.Body>
             </Card>
             <div>
