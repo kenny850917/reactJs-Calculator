@@ -10,6 +10,7 @@ class QuestionMain extends Component {
       questionBank: [],
       score: 0,
       responses: 0,
+      yourAnswer: "",
       thiscCorrectAnswer: "",
     };
   }
@@ -24,13 +25,19 @@ class QuestionMain extends Component {
   // setters to set state to default when playAgain is called
   playAgain = () => {
     this.getQuestions();
-    this.setState({ score: 0, responses: 0 });
+    this.setState({
+      score: 0,
+      responses: 0,
+      yourAnswer: "",
+      thisCorrectAnswer: "",
+    });
   };
 
   //functions to calculate scores
   computeAnswer = (answer, correctAnswer) => {
     // console.log("correct", correctAnswer);
     this.setState({
+      yourAnswer: answer,
       thisCorrectAnswer: correctAnswer,
       // responses increment when clicked and not greater than 5
       responses:
@@ -81,8 +88,10 @@ class QuestionMain extends Component {
                       />
                     )
                   )}
-                The Answer was
-                {" " + this.state.thisCorrectAnswer}
+                <div>
+                  <p>Your Answer was {this.state.yourAnswer}</p>
+                  <p>The Answer was {this.state.thisCorrectAnswer}</p>
+                </div>
               </Card.Body>
             </Card>
             <div>
